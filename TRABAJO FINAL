@@ -1,0 +1,1332 @@
+// funciones o SubAlgoritmo  del proyecto
+// SubAlgoritmo menus del proyecto
+Funcion opcion=presentarMenu(titulo,menu,lim)
+	Definir opcion Como Caracter
+	Definir pos Como Entero
+	Borrar Pantalla
+	Escribir ""
+	Escribir titulo
+	Para pos = 0 Hasta lim - 1 Con Paso 1 Hacer
+		Escribir menu[pos]
+	Fin Para
+	Escribir "**********************************"
+	Escribir "  Elija una opcion por favor : [1..",lim,"] " Sin Saltar
+	leer opcion
+FinFuncion
+
+//FUNCIONES DE NUMEROS
+
+
+//EJERCICIO 1
+//Colas
+Funcion CantidadDeColas(Colas)
+	Definir cantidadComprada, costoPorUnidad, totalSinIVA, iva, totalAPagar Como Real
+    Escribir "Ingrese la cantidad de colas compradas: "
+    Leer cantidadComprada
+    Si cantidadComprada > 23 Entonces
+        costoPorUnidad <- 0.50
+    Sino
+        costoPorUnidad <- 0.50 * 1.20
+    FinSi
+    totalSinIVA <- cantidadComprada * costoPorUnidad
+    iva <- 0.12 * totalSinIVA
+    totalAPagar <- totalSinIVA + iva
+    Escribir "Cantidad comprada: ", cantidadComprada
+    Escribir "Costo por unidad: $", costoPorUnidad
+    Escribir "Total sin IVA: $", totalSinIVA
+    Escribir "IVA (12%): $", iva
+    Escribir "Total a pagar: $", totalAPagar
+FinFuncion
+
+//EJERCICIO 2
+//Ganacia
+Funcion KilosDeUvas(Uvas)
+	Definir precioInicial, tipoUva, tamañoUva, ganancia Como Real
+    Escribir "Ingrese el precio inicial por kilo de uva: "
+    Leer precioInicial
+    Escribir "Ingrese el tipo de uva (A o B): "
+    Leer tipoUva
+    Escribir "Ingrese el tamaño de la uva (1 o 2): "
+    Leer tamañoUva
+    Si tipoUva = A Entonces
+        Si tamañoUva = 1 Entonces
+            ganancia = precioInicial + 20
+        Sino
+            ganancia = precioInicial + 30
+        FinSi
+    Sino
+        Si tamañoUva = 1 Entonces
+            ganancia = precioInicial - 30
+        Sino
+            ganancia = precioInicial - 50
+        FinSi
+    FinSi
+    Escribir "La ganancia obtenida es: ", ganancia
+FinFuncion
+
+//EJERCICIO 3
+//Dado dos numeros 
+Funcion DadoDosNumeros(DosNume)
+	Definir dividendo, divisor, residuo Como Entero
+    Escribir "Ingrese Un Numero "
+    Leer dividendo
+    Escribir "Ingrese el segundo numero: "
+    Leer divisor
+    residuo = dividendo
+    Mientras residuo >= divisor Hacer
+        residuo = residuo - divisor
+    FinMientras
+    Escribir "El residuo es: ", residuo
+FinFuncion
+
+//EJERCICIO 4
+//Consultorio del Dr. Paez
+Funcion ElDrPaez(Consultorio)
+	Definir numeroCita Como Entero
+    Definir costoCita Como Real
+    Definir montoTotalTratamiento Como Real
+    Escribir "Ingrese el número de cita: "
+    Leer numeroCita
+    Si numeroCita <= 3 Entonces
+        costoCita = 200.00
+    Sino
+        Si numeroCita <= 5 Entonces
+            costoCita = 150.00
+        Sino
+            Si numeroCita <= 8 Entonces
+                costoCita = 100.00
+            Sino
+                costoCita = 50.00
+            FinSi
+        FinSi
+    FinSi
+    montoTotalTratamiento = (3 * 200.00) + (2 * 150.00) + (3 * 100.00) + ((numeroCita - 8) * 50.00)
+    Escribir "El costo de la cita es: ", costoCita
+    Escribir "El monto total gastado en el tratamiento es: ", montoTotalTratamiento
+FinFuncion
+
+//EJERCICIO 5
+//Escribir un Algoritmo 
+Funcion LeerCuatroNumeros(Algorit)
+	Definir num1, num2, num3, num4 Como Entero
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Escribir "Ingrese el tercer número:"
+    Leer num3
+    Escribir "Ingrese el cuarto número:"
+    Leer num4
+    Si (num1 * 2 = num2) Entonces
+        Escribir "El número 1 es la mitad del número 2."
+    FinSi
+    Si (num4 MOD num3 = 0) Entonces
+        Escribir "El número 3 es divisor del número 4."
+    FinSi
+FinFuncion
+
+//EJERCICIO 6
+//El Banco XYZ
+Funcion BancoXYZ(Credito)
+	Definir tipoTarjeta, limiteActual Como Real
+    Definir nuevoLimite Como Real
+    Escribir "Ingrese el tipo de tarjeta (1, 2, 3 o cualquier otro):"
+    Leer tipoTarjeta
+    Escribir "Ingrese el límite de crédito actual:"
+    Leer limiteActual
+    Si tipoTarjeta = 1 Entonces
+        nuevoLimite = limiteActual * 1.25 + 20
+    Sino
+        Si tipoTarjeta = 2 Entonces
+            nuevoLimite = limiteActual * 1.35 + 20
+        Sino
+            Si tipoTarjeta = 3 Entonces
+                nuevoLimite = limiteActual * 1.40 + 20
+            Sino
+                nuevoLimite = limiteActual * 1.50 + 20
+            FinSi
+        FinSi
+    FinSi
+    Escribir "El nuevo límite de crédito es: ", nuevoLimite
+FinFuncion
+
+//EJERCICIO 7
+//Escribir un algortimo 
+Funcion LecturaDeNumeros(LecturaDeNume)
+	Definir num1, num2, num3, num4 Como Entero
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Escribir "Ingrese el tercer número:"
+    Leer num3
+    Escribir "Ingrese el cuarto número:"
+    Leer num4
+    Si (num3 MOD num1 = 0) Entonces
+        Escribir "El número 1 es divisor del número 3."
+    FinSi
+    Si (num2 = num4 * 2) Entonces
+        Escribir "El número 2 es el doble del número 4."
+    FinSi
+FinFuncion
+
+//EJERCICIO 8
+//El Banco POO
+Funcion BancoPOO(AumentoDeCredito)
+	Definir tipoTarjeta Como Entero
+    Definir aumento, limiteActual, nuevoLimite Como Real
+    Escribir "Ingrese el tipo de tarjeta (1, 2, 3 o cualquier otro):"
+    Leer tipoTarjeta
+    Escribir "Ingrese el límite de crédito actual:"
+    Leer limiteActual
+    Si tipoTarjeta = 1 Entonces
+        aumento = 100
+    Sino
+        Si tipoTarjeta = 2 Entonces
+            aumento = 200
+        Sino
+            Si tipoTarjeta = 3 Entonces
+                aumento = 300
+            Sino
+                aumento = 500
+            FinSi
+        FinSi
+    FinSi
+    nuevoLimite = limiteActual + aumento
+    nuevoLimite = nuevoLimite + (nuevoLimite * 0.10)
+    Escribir "El nuevo límite de crédito es: ", nuevoLimite
+FinFuncion
+
+//EJERCICIO 9
+//Numero Positivo o Negativo
+Funcion PositivosOnegativos(NumeroPositivo)
+	Definir numero Como Entero
+    Escribir "Ingrese un número:"
+    Leer numero
+    Si numero < -20 Entonces
+        Escribir "El número es negativo y menor que -20."
+    Sino
+        Si (numero MOD 2 = 0) Entonces
+            Escribir "El número es positivo y par."
+        Sino
+            Si (numero MOD 7 = 0) Entonces
+                Escribir "El número es positivo e impar y múltiplo de 7."
+            Sino
+                Escribir "El número es positivo e impar pero no es múltiplo de 7."
+            FinSi
+        FinSi
+    FinSi
+FinFuncion
+
+//EJERCICIO 10
+//Precio de Pitajaya
+Funcion AsociacionDeVinicultores(Pitajaya)
+	Definir tipoPitajaya, tamanoPitajaya Como Caracter
+    Definir precioInicial, precioFinal Como Real
+    Escribir "Ingrese el tipo de pitajaya (A para Amarilla, C para Colorada):"
+    Leer tipoPitajaya
+    Escribir "Ingrese el tamaño de la pitajaya (1 para tamaño 1, 2 para tamaño 2):"
+    Leer tamanoPitajaya
+    Escribir "Ingrese el precio inicial por quintal de pitajaya:"
+    Leer precioInicial
+    Si tipoPitajaya = "A" Entonces
+        Si tamanoPitajaya = "1" Entonces
+            precioFinal = precioInicial + 10
+        Sino
+            precioFinal = precioInicial * 1.15 + 5
+        FinSi
+    Sino
+        Si tamanoPitajaya = "1" Entonces
+            precioFinal = precioInicial - 20
+        Sino
+            precioFinal = precioInicial * 0.80
+        FinSi
+    FinSi
+    Si tipoPitajaya = "A" O tipoPitajaya = "C" Entonces
+        precioFinal = precioFinal - (precioFinal * 0.05)
+    FinSi
+    precioFinal = precioFinal + (precioFinal * 0.12)
+    Escribir "El precio de embarque es: ", precioFinal
+FinFuncion
+
+//EJERCICIO 11
+//numero sea menor de 10
+Funcion MostrarQueNumeroSeaMenor(NumeroNegativo)
+	Definir numero Como Entero 
+    Escribir "Ingrese un número:"
+    Leer numero
+    Si (numero MOD 2 = 0) Y (numero < 10) Entonces
+        Escribir "El número es par y menor que 10."
+    Sino
+        Si (numero < 0) Y (numero MOD 2 <> 0) O (numero MOD 5 = 0) Entonces
+            Escribir "El número es negativo, impar o divisible por 5."
+        FinSi
+    FinSi
+FinFuncion
+
+//EJERCICIO 12
+//Fabricas EL Cometa
+funcion FabricasElCometa(ElCometa)
+	Definir clave, costoMateriaPrima, costoManoDeObra, gastosFabricacion, costoProduccion, precioVenta Como Real
+    Escribir "Ingrese la clave del artículo (1, 2, 3, 4, 5 o 6):"
+    Leer clave
+    Escribir "Ingrese el costo de la materia prima:"
+    Leer costoMateriaPrima
+    Si clave = 1 O clave = 5 Entonces
+        costoManoDeObra = costoMateriaPrima * 0.80
+    Sino
+        Si clave = 2 O clave = 6 Entonces
+            costoManoDeObra = costoMateriaPrima * 0.85
+        Sino
+            costoManoDeObra = costoMateriaPrima * 0.75
+        FinSi
+    FinSi
+    Si clave = 2 O clave = 5 Entonces
+        gastosFabricacion = costoMateriaPrima * 0.30
+    Sino
+        Si clave = 3 O clave = 6 Entonces
+            gastosFabricacion = costoMateriaPrima * 0.35
+        Sino
+            gastosFabricacion = costoMateriaPrima * 0.28
+        FinSi
+    FinSi
+    costoProduccion = costoMateriaPrima + costoManoDeObra + gastosFabricacion
+    precioVenta = costoProduccion + (costoProduccion * 0.45)
+    Escribir "El precio de venta del artículo es: ", precioVenta
+FinFuncion
+
+// EJERCICIO 13
+//informar cuantos digitos tienen el numero
+Funcion CalcularDigitos(Digitos)
+	Definir N, contador Como Entero
+    Escribir "Ingrese un número entero: "
+    Leer N
+    contador <- 0
+    Mientras N > 0 Hacer
+        N <- N mod 10
+        contador <- contador + 1
+    FinMientras
+    Escribir "El número tiene ", contador, " dígito."
+FinFuncion
+
+//EJERCICIO 14
+//Determine si el numero es Capicua
+funcion DeterminarNumero(Capicua)
+	Definir nume, numeroInvertido, numeroOriginal, digito Como Entero
+    Escribir "Ingrese un número: "
+    Leer nume
+    numeroOriginal <- nume
+    numeroInvertido <- 0
+    Mientras nume > 0
+        digito <- nume % 10
+        numeroInvertido <- numeroInvertido * 10 + digito
+        nume <- nume mod 10
+    Fin Mientras
+    Si numeroOriginal = numeroInvertido Entonces
+        Escribir "El número ingresado es capicúa."
+    Sino
+        Escribir "El número ingresado no es capicúa."
+    FinSi
+FinFuncion
+
+//EJERCICIO 15
+// presentar los divisores de un numero
+Funcion NumerosDivisores(Divisores)
+	Definir nume Como Entero
+    Definir divisor Como Entero
+    Escribir "Ingrese un número: "
+    Leer nume
+    Escribir "Los divisores de ", nume, " son:"
+    Para divisor <- 1 Hasta nume Hacer
+        Si nume % divisor == 0 Entonces
+            Escribir divisor
+        Fin Si
+    Fin Para
+FinFuncion
+
+//EJERCICIO 16
+//Suma de divisores de un numero
+funcion SumaDeDivisores(SumaDivisores)
+	Definir nume, divisor, suma Como Entero
+    Escribir "Ingrese un número: "
+    Leer nume
+    suma <- 0
+    Para divisor <- 1 Hasta nume Hacer
+        Si nume % divisor == 0 Entonces
+            suma <- suma + divisor
+        Fin Si
+    Fin Para
+    Escribir "La suma de los divisores de", " ", nume," ", "es:", suma
+FinFuncion
+
+//EJERCICIO 17
+//Presentar la cantidad de divisores de un numero 
+funcion PresentarCantidad(CantidadNumeros)
+	Definir nume, divisor, canti Como Entero
+    Escribir "Ingrese un número: "
+    Leer nume
+    canti <- 0
+    Para divisor <- 1 Hasta nume Hacer
+        Si nume % divisor == 0 Entonces
+            canti <- canti + 1
+        Fin Si
+    Fin Para
+    Escribir "El número", " ",  nume, " ", "tiene", " ",  canti, " ",  "divisores."
+FinFuncion
+
+//EJERCICIO 18
+//Indicar si un numero es perfecto
+Funcion NumeroPerfecto(numeroper)
+	Definir numer, sumaDivisores Como Entero
+    Escribir "Ingrese un número: "
+    Leer numer
+    sumaDivisores <- 0
+    Para divisor <- 1 Hasta numer - 1 Hacer
+        Si numer % divisor == 0 Entonces
+            sumaDivisores <- sumaDivisores + divisor
+        Fin Si
+    Fin Para
+    Si sumaDivisores == numer Entonces
+        Escribir "El número", " ",  numer, " ",  "es un número perfecto."
+    Sino
+        Escribir "El número", " ", numer, " ", "no es un número perfecto."
+    Fin Si
+FinFuncion
+
+//EJERCICIO19
+//Determinar si es numero primo
+Funcion NumeroPrimos(NumerosPrimos)
+	Definir nume, divisor, contado Como Entero
+    Definir Primo Como Logico
+    Escribir "Ingrese un número: "
+    Leer nume
+    contado <- 0
+    Primo <- Verdadero
+    Si nume <= 1 Entonces
+        Primo <- Falso
+    Fin Si
+    Para divisor <- 2 Hasta nume / 2 Hacer
+        Si nume % divisor == 0 Entonces
+            contado <- contado + 1
+            Primo <- Falso
+        Fin Si
+    Fin Para
+    Si Primo Entonces
+        Escribir "El número", " ", nume, " ", "es un número primo."
+    Sino
+        Escribir "El número", " ", nume, " ", "no es un número primo."
+    Fin Si
+FinFuncion
+
+//EJERCICIO 20
+//Determinar si son numeros primos gemelos
+Funcion NumerosGemelos(Gemelos)
+	Definir nume, divisor, contador Como Entero
+    Definir Primo Como Logico
+    Escribir "Ingrese un número: "
+    Leer nume
+    contador <- 0
+    Primo <- Verdadero
+    Si nume <= 1 Entonces
+        Primo <- Falso
+    Fin Si
+    Para divisor <- 2 Hasta nume / 2 Hacer
+        Si nume % divisor == 0 Entonces
+            contador <- contador + 1
+            Primo <- Falso
+        Fin Si
+    Fin Para
+    Si Primo Entonces
+        Escribir "El número", " ", nume, " ", "es un número primo."
+    Sino
+        Escribir "El número", " ", nume, " ", "no es un número primo."
+    Fin Si
+FinFuncion
+
+//EJERCICIO 21
+// Dos numeros si son primos amigos
+Funcion PrimosAmigos(Primo)
+	Escribir "Ingresa el primer número: "
+    Leer num1
+    Escribir "Ingresa el segundo número: "
+    Leer num2
+    sumaDivisoresNum1 <- 0
+    Para divisor1 <- 1 Hasta num1 - 1 Con Paso 1
+        Si num1 MOD divisor1 == 0 Entonces
+            sumaDivisoresNum1 <- sumaDivisoresNum1 + divisor1
+        Fin Si
+    Fin Para
+    sumaDivisoresNum2 <- 0
+    Para divisor2 <- 1 Hasta num2 - 1 Con Paso 1
+        Si num2 MOD divisor2 == 0 Entonces
+            sumaDivisoresNum2 <- sumaDivisoresNum2 + divisor2
+        Fin Si
+    Fin Para
+    Si sumaDivisoresNum1 == sumaDivisoresNum2 Entonces
+        Escribir "Los números", " ",  num1, " ", "y", " ", num2, " ", "son primos amigos."
+    Sino
+        Escribir "Los números", " ", num1, " ", "y", " ", num2, " ", "no son primos amigos."
+    Fin Si
+FinFuncion
+
+
+//FUNCIONES DE CADENAS Y ARREGLOS
+
+
+
+
+//EJERCICIO 1
+//Presentacion de secuencia
+Funcion PresentacionDeSecuencia(Secuencia)
+	Definir n, i, respuesta Como Entero
+    respuesta = 1
+    n = 6
+    Escribir "Secuencia:"
+    Para i = 0 Hasta n + 2
+        Escribir respuesta
+        respuesta = respuesta * 2
+    FinPara
+FinFuncion
+
+//EJERCICIO 2
+//Promedio de elementos pares eh impares
+Funcion PromedioDeElementos(ParesImpares)
+	Definir n, i, sumaPares, sumaImpares, contPares, contImpares como Entero
+    Dimension arreglo[100], arregloPares[100], arregloImpares[100]
+    Escribir "Ingrese la cantidad de elementos del arreglo: "
+    Leer n
+    Para i = 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+    sumaPares <- 0
+    sumaImpares <- 0
+    contPares <- 0
+    contImpares <- 0
+    Para i = 1 Hasta n
+        Si arreglo[i] MOD 2 = 0 Entonces
+            sumaPares <- sumaPares + arreglo[i]
+            arregloPares[contPares] <- arreglo[i]
+            contPares <- contPares + 1
+        Sino
+            sumaImpares <- sumaImpares + arreglo[i]
+            arregloImpares[contImpares] <- arreglo[i]
+            contImpares <- contImpares + 1
+        FinSi
+    FinPara
+    Escribir "Promedio de elementos pares: ", sumaPares / contPares
+    Escribir "Promedio de elementos impares: ", sumaImpares / contImpares
+    Escribir "Elementos pares: "
+    Para i = 0 Hasta contPares - 1
+        Escribir arregloPares[i]
+    FinPara
+    Escribir "Elementos impares: "
+    Para i = 0 Hasta contImpares - 1
+        Escribir arregloImpares[i]
+    FinPara
+FinFuncion
+
+// EJERCICIO 3
+//Presentacion de Secuencias 
+Funcion PresentarSecuencias(Secuencias)
+	Definir n, i, respuesta como Entero
+    Escribir "Ingrese el valor de n: "
+    Leer n
+    respuesta <- n * 4
+    Para i = 1 Hasta n
+        Escribir respuesta
+        respuesta <- respuesta - 5
+    FinPara
+FinFuncion
+
+//EJERCICIO 4
+//Porgrama de copie de numeros
+Funcion CopieDeNumeros(ProgramaCopia)
+	Definir n, i, j, k como Entero
+    Dimension arreglo[100], arregloPositivo[100], arregloNegativo[100]
+    Escribir "Ingrese la cantidad de elementos del arreglo: "
+    Leer n
+    Para i = 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+    j <- 1
+    k <- 1
+    Para i = 1 Hasta n
+        Si arreglo[i] > 0 Entonces
+            arregloPositivo[j] <- arreglo[i]
+            j <- j + 1
+        Sino Si arreglo[i] < 0 Entonces
+				arregloNegativo[k] <- arreglo[i]
+				k <- k + 1
+			FinSi
+		FinSi
+		Escribir "Arreglo de números positivos: "
+		Para i = 1 Hasta j - 1
+			Escribir arregloPositivo[i]
+		FinPara
+		Escribir "Arreglo de números negativos: "
+		Para i = 1 Hasta k - 1
+			Escribir arregloNegativo[i]
+		FinPara
+	FinPara
+FinFuncion
+
+//EJERCICIO 5
+//Leer secuencia de numeros
+Funcion SecuenciaNumeros(MostrarSumaPares)
+	Definir nume, paresSuma, contMultiplos3 como Entero
+    paresSuma <- 0
+    contMultiplos3 <- 0
+    Escribir "Ingrese una secuencia de números."
+    Leer nume
+    Mientras nume = 0 Hacer
+        Si nume MOD 2 = 0 Entonces
+            paresSuma <- paresSuma + nume
+        FinSi
+        Si nume MOD 3 = 0 Entonces
+            contMultiplos3 <- contMultiplos3 
+        FinSi
+		Leer  nume
+    FinMientras
+    Escribir "La suma de los números pares es: ", paresSuma
+    Escribir "La cantidad de números que son múltiplos de 3 es: ", contMultiplos3
+FinFuncion
+
+//EJERCICIO 6
+//Secuencia de numeros hasta que ingrese el 0
+Funcion AlmacenarlosEnArreglos(AlmacenarArreglo)
+	Definir nume, i, sumaCuadrados como Entero
+    Dimension arreglo[4]
+    i <- 1
+    sumaCuadrados <- 0
+    Escribir "Ingrese una secuencia de números. Ingrese 0 para finalizar."
+    Leer nume
+    Mientras numero <> 0 Hacer
+        arreglo[i] <- nume
+        i <- i + 1
+        Leer nume
+    FinMientras
+    Escribir "Arreglo de números:"
+    Para i = 1 Hasta i 
+        Escribir arreglo[i]
+    FinPara
+    Para i = 1 Hasta i 
+        sumaCuadrados <- sumaCuadrados + (arreglo[i] * arreglo[i])
+    FinPara
+    Escribir "Suma de los cuadrados de cada número: ", sumaCuadrados
+FinFuncion
+
+//EJERCICIO 7
+//Secuencia de numeros hasta que ingrese un numero Par
+Funcion MultiplosDeCinco(MultiplosCinco)
+	Definir nume, contMay5, sumaMultiplos5 como Entero
+    contMay5 <- 0
+    sumaMultiplos5 <- 0
+    Escribir "Ingrese una secuencia de número."
+    Leer nume
+    Mientras nume MOD 2 <> 0 Hacer
+        Si nume > 5 Entonces
+            contMay5 <- contMay5 
+        FinSi
+        Si nume MOD 5 = 0 Entonces
+            sumaMultiplos5 <- sumaMultiplos5 + nume
+        FinSi
+        Leer nume
+    FinMientras
+    Escribir "La cantidad de números mayores a 5 es: ", contMay5
+    Escribir "La suma de los múltiplos de 5 es: ", sumaMultiplos5
+FinFuncion
+
+//EJERCICIO 8
+//Leer secuencia de numeros
+Funcion AlmacenarNumerosNegativos(NumerosNegativos)
+	Definir nume, i, sumaCubos como Entero
+    Dimension arreglo[4]
+    i <- 1
+    sumaCubos <- 0
+    Escribir "Ingrese una secuencia de números."
+    Leer nume
+    Mientras nume = 0 Hacer
+        arreglo[i] <- nume
+        i <- i 
+        Leer nume
+    FinMientras
+    Escribir "Arreglo de números:"
+    Para i = 1 Hasta i - 1
+        Escribir arreglo[i]
+    FinPara
+    Escribir "Suma de cada número elevado al cubo:"
+    Para i = 1 Hasta i - 1
+        sumaCubos <- sumaCubos + arreglo[i] 
+        Escribir arreglo[i] 
+    FinPara
+    Escribir "Respuesta de la suma: ", sumaCubos
+FinFuncion
+
+//EJERCICIO 9
+//Frases contar palabras
+Funcion fraseContar(frase)
+	Definir contPalabras, i, espacios Como Entero
+	contPalabras = 0
+	espacios = 0
+	i = 0
+	espacios = Longitud(frase)
+	Para i = 0 Hasta espacios - 1 Con Paso 1 Hacer
+		Si Subcadena(frase, i, i) == " " Entonces
+			contPalabras = contPalabras + 1
+		FinSi
+	FinPara
+	Escribir "Número de palabras: ", contPalabras + 1
+FinFuncion
+
+//EJERCICIO 10
+//Leer secuencia de numeros
+Funcion RecorrerArreglo(RecorrerA)
+	Definir nume, i como Entero
+    Dimension arreglo[4]
+    i <- 1
+    Escribir "Ingrese una secuencia de números."
+    Leer nume
+    Mientras nume = 0 Hacer
+        arreglo[i] <- nume * 2
+        i <- i - 1
+        Leer nume
+    FinMientras
+    Escribir "Arreglo original:"
+    Para j = 1 Hasta i - 1
+        Escribir arreglo[j]
+    FinPara
+    Escribir "Arreglo con los elementos duplicados:"
+    Para j = 1 Hasta i - 1
+        Escribir arreglo[j]
+    FinPara
+FinFuncion
+//EJERCICIO 11
+//Mostrar cuantas X ingresaron
+Funcion MostrarLoIngresado(Xingresadas)
+	Definir secuencia, cont, carac como Cadena
+    secuencia <- ""
+    Escribir "Ingrese una secuencia de caracteres"
+    Mientras carac <>"." Hacer
+        Leer carac
+        secuencia <- secuencia + carac
+    FinMientras
+    Para i = 1 Hasta Longitud(secuencia)
+        Si SubCadena(secuencia, i, 1) = "x" Entonces
+            contX <- contX
+        FinSi
+    FinPara
+    Escribir "La secuencia ingresada fue: ", secuencia
+FinFuncion
+
+//EJERCICIO 12
+//ALMACENAR ARREGLOS
+Funcion AlmacenarArreglos(AlmacenarA)
+	Definir secuencia, arreglo1, arreglo2 como Entero
+    Definir nume como Entero
+    secuencia <- 1
+    Mientras secuencia <> 0
+        Escribir "Ingrese un número (0 para terminar): "
+        Leer nume
+        Si nume <> 0
+            arreglo <- nume
+            secuencia <- secuencia + 1
+        FinSi
+    FinMientras
+    Para i <- 1 Hasta secuencia - 1
+        Si arreglo1 MOD 2 = 0
+            arreglo2 <- arreglo1
+        FinSi
+    FinPara
+    Escribir "Arreglo1 ="
+    Para i <- 1 Hasta secuencia - 1
+        Escribir arreglo1
+        Si i < secuencia - 1
+            Escribir ", "
+        FinSi
+    FinPara
+    Escribir "Arreglo2 ="
+    Para i <- 1 Hasta secuencia - 1
+        Si arreglo2<> 0
+            Escribir arreglo2
+            Si i < secuencia - 1
+                Escribir ", "
+            FinSi
+        FinSi
+    FinPara
+FinFuncion
+
+//EJERCICIO 13
+//Presentar valores mayores 
+Funcion PresentarMayores(ValoresMayores)
+	Definir numero1, numero2, i Como Entero
+    Escribir "Ingrese el número inicial (numero1): "
+    Leer numero1
+    Escribir "Ingrese el número final (numero2): "
+    Leer numero2
+    Si numero1 <= numero2 Entonces
+        Para i = numero1 Hasta numero2 Hacer
+            Si i >= 5 Entonces
+                Escribir i
+            FinSi
+        FinPara
+    Sino
+        Escribir "El número inicial debe ser menor o igual al número final."
+    FinSi
+FinFuncion
+
+//EJERCICIO 14
+//Edades Facultad FACI
+Funcion EdadesFacultad(Edades)
+	Definir cantidadAlumnos, i, edad, edade Como Entero
+    Definir sumaEdades, sumaEdadesMayores18, sumaEdadesMenores18 Como Real
+    Definir cantidadMayores18, cantidadMenores18 Como Entero
+    Escribir "Ingrese la cantidad de alumnos: "
+    Leer cantidadAlumnos
+    Para i = 1 Hasta cantidadAlumnos Hacer
+        Escribir "Ingrese la edad del alumno ", i, ": "
+        Leer edad
+        edades = edad
+        sumaEdades = sumaEdades + edad
+        Si edad >= 18 Entonces
+            cantidadMayores18 = cantidadMayores18 + 1
+            sumaEdadesMayores18 = sumaEdadesMayores18 + edad
+        Sino
+            cantidadMenores18 = cantidadMenores18 + 1
+            sumaEdadesMenores18 = sumaEdadesMenores18 + edad
+        FinSi
+    FinPara
+    Si cantidadAlumnos > 0 Entonces
+        promedioGeneral = sumaEdades / cantidadAlumnos
+        promedioMayores18 = sumaEdadesMayores18 / cantidadMayores18
+        promedioMenores18 = sumaEdadesMenores18 / cantidadMenores18
+        Escribir "Promedio general de edades: ", promedioGeneral
+        Escribir "Cantidad de edades mayores o iguales a 18: ", cantidadMayores18
+        Escribir "Promedio de edades mayores o iguales a 18: ", promedioMayores18
+        Escribir "Cantidad de edades menores a 18: ", cantidadMenores18
+        Escribir "Promedio de edades menores a 18: ", promedioMenores18
+    Sino
+        Escribir "No se ingresaron edades."
+    FinSi
+FinFuncion
+
+//EJERCICIO 15
+//Valores Impares Comprendidos
+Funcion ValoresImpares(ValorImpar)
+	Definir numero1, numero2, i Como Entero
+    Escribir "Ingrese el número inicial (numero1): "
+    Leer numero1
+    Escribir "Ingrese el número final (numero2): "
+    Leer numero2
+    Si numero1 < numero2 Entonces
+        Para i = numero1 + 1 Hasta numero2 - 1 Hacer
+            Si i % 2 <> 0 Entonces
+                Escribir i
+            FinSi
+        FinPara
+    Sino
+        Escribir "El número inicial debe ser menor que el número final."
+    FinSi
+FinFuncion
+
+//EJERCICIO 16
+// SERIES DE SUELDOS
+Funcion serieDeSueldos(Sueldos)
+	Definir cantidadEmpleados, i Como Entero
+    Definir sueldo Como Real
+    Definir sueldoMasAlto Como Real
+    Definir sumaSueldos Como Real
+    Escribir "Ingrese la cantidad de empleados: "
+    Leer cantidadEmpleados
+    Para i = 1 Hasta cantidadEmpleados Hacer
+        Escribir "Ingrese el sueldo del empleado ", i, ": "
+        Leer sueldos
+        sumaSueldos = sumaSueldos + sueldos
+		
+        Si i = 1 o sueldos > sueldoMasAlto Entonces
+            sueldoMasAlto = sueldos
+        FinSi
+    FinPara
+    Si cantidadEmpleados > 0 Entonces
+        promedioSueldos = sumaSueldos / cantidadEmpleados
+		
+        Escribir "Sueldo más alto de los empleados: ", sueldoMasAlto
+        Escribir "Cantidad de sueldos de los empleados: ", cantidadEmpleados
+        Escribir "Promedio de sueldos de los empleados: ", promedioSueldos
+    Sino
+        Escribir "No se ingresaron sueldos de empleados."
+    FinSi
+FinFuncion
+
+//EJERCICIO 17
+//Indicar la mayor Frase
+Funcion MayorFrase(Frase)
+	Definir frase1, frase2 Como Cadena
+    Escribir "Ingrese la primera frase: "
+    Leer frase1
+    Escribir "Ingrese la segunda frase: "
+    Leer frase2
+    Si Longitud(frase1) > Longitud(frase2) Entonces
+        Escribir "La primera frase es la más larga."
+    Sino Si Longitud(frase2) > Longitud(frase1) Entonces
+			Escribir "La segunda frase es la más larga."
+		Sino
+			Escribir "Ambas frases tienen la misma longitud."
+		FinSi
+	FinSi
+FinFuncion
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// Algoritmo principal del proyecto
+Algoritmo TRABAJO_FINAL
+	Definir menuPrincipal,menuNumeros,menuCadenas,menuArreglos,titulo,titulo2,opc,opcn,opcc,opca Como Caracter
+	Definir pos,lim Como Entero
+	Dimension menuPrincipal[3],menuNumeros[22],menuCadenas[24]
+	// Arreglo menu principal
+	menuPrincipal[0] = "  1)EJERCICIOS CON NUMEROS"
+	menuPrincipal[1] = "  2)EJERCICIOS CON CADENAS Y ARREGLOS"
+	menuPrincipal[2] = "  3)SALIR"
+	
+	//NUMEROS
+	menuNumeros[0] = "  1)Determinar cuánto se debe pagar por cierta cantidad de colas"
+	menuNumeros[1] = "  2) La asociación de Vinicultores Inicio Kilo"
+	menuNumeros[2] = "  3)Dado dos números obtener el residuo sin el operador mod, %"
+	menuNumeros[3] = "  4)El consultorio del Dr. Paez"
+	menuNumeros[4] = "  5)Escribir un algoritmo que lea cuatro números de mitad"
+	menuNumeros[5] = "  6)El Banco XYZ"
+	menuNumeros[6] = "  7)Escribir un algoritmo que lea cuatro números divisor"
+	menuNumeros[7] = "  8)El Banco POO"
+	menuNumeros[8] = "  9)Pedir al usuario un número"
+	menuNumeros[9] = "  10)La asociación de Vinicultores Inicial Quintal"
+	menuNumeros[10]= "  11) Pedir al usuario un número y mostrar si es par menor que 10"
+	menuNumeros[11]= "  12)Fábricas El Cometa"
+	menuNumeros[12]= "  13)Dado un número entero N, calcular e informar al usuario cuántos dígitos tiene dicho número"
+	menuNumeros[13]= "  14)Dado un número, determine si es capicúa"
+	menuNumeros[14]= "  15)Escribir un algoritmo que presente los divisores de un numero"
+	menuNumeros[15]= "  16)Escribir un algoritmo que presente la suma de los divisores de un numero"
+	menuNumeros[16]= "  17)Escribir un algoritmo que presente la cantidad de los divisores de un numero"
+	menuNumeros[17]= "  18)Escribir un algoritmo que indique si un número es perfecto"
+	menuNumeros[18]= "  19)Dado un número N determinar si es un número primo"
+	menuNumeros[19]= "  20)Dado dos números determinar si son primos gemelos"
+	menuNumeros[20]= "  21)Dado dos números determinar si son primos amigos"
+	menuNumeros[21]= "  22)Regresar al Menu"
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//CADENAS Y ARREGLOS
+	menuCadenas[0] = "  1)Dada n realizar un algoritmo que presente la siguiente secuencia"
+	menuCadenas[1] = "  2)Implementa un programa que calcule el promedio de los elementos pares e impares"
+	menuCadenas[2] = "  3)Dada n realizar un algoritmo que presente la siguiente secuencia"
+	menuCadenas[3] = "  4)Implementa un programa que copie los números de un arreglo a 2 arreglos en uno los números positivos"
+	menuCadenas[4] = "  5)Leer una secuencia de números hasta que se ingrese un numero negativo"
+	menuCadenas[5] = "  6)Leer una secuencia de números hasta que se ingrese un 0 y almacenarlos en un arreglo"
+	menuCadenas[6] = "  7)Leer una secuencia de números hasta que se ingrese un numero par"
+	menuCadenas[7] = "  8)Leer una secuencia de números hasta que se ingrese un numero negativo y almacenarlos en un arreglo"
+	menuCadenas[8] = "  9)Dado una frase indicar cuantas palabras tiene"
+	menuCadenas[9] = "  10)Leer una secuencia de números hasta que se ingrese un numero negativo y almacenarlos en arreglo. Se pide recorrer el arreglo y cambiar cada"
+	menuCadenas[10] ="  11)Leer una secuencia de caracteres hasta que se ingrese un punto."
+	menuCadenas[11] ="  12)Leer una secuencia de números hasta que se ingrese un 0 y almacenarlos en arreglo"
+	menuCadenas[12] ="  13)Dado dos números presentar los valores mayores a 5 entre ellos"
+	menuCadenas[13] ="  14)Elaborar un algoritmo que lea una serie de edades de los alumnos de la facultad FACI"
+	menuCadenas[14] ="  15)Dado dos números presentar los valores Impares comprendidos entre ellos"
+	menuCadenas[15] ="  16)Elaborar un algoritmo que lea una serie de sueldos de los empleados de la UNEMI"
+	menuCadenas[16] ="  17)Dadas dos frase indicar la de mayor longitud"
+	menuCadenas[17] ="  18)Indicar cuantas ,.;: hay en una cadena"
+	menuCadenas[18] ="  19)Dado una cadena indicar cuantas vocales, consonantes y dígitos hay"
+	menuCadenas[19] ="  20)Indicar cuantas palabras hay en una frase asumiendo 1 o varios espacios entre palabras"
+	menuCadenas[20] ="  21)Presentar la suma de los dígitos de una cedula"
+	menuCadenas[21] ="  22)Indicar si una palabra es palíndroma"
+	menuCadenas[22] ="  23)Presentar la posición de un carácter cualquiera dentro de una cadena"
+	menuCadenas[23]= "	  24)Regresar al Menu"
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	opc=""
+    Mientras opc <> "3" Hacer
+		opc=presentarMenu("******MENU PRINCIPAL******",menuPrincipal,3)
+		Segun opc Hacer
+			"1":
+				opcn=""
+				Mientras opcn <> "22" Hacer         
+					opcn=presentarMenu("********MENU NUMEROS***************",menuNumeros,22)
+					Segun opcn Hacer
+						"1":
+							Borrar Pantalla
+							Escribir "1)Determinar cuánto se debe pagar por cierta cantidad de colas";
+							Definir Colas Como Cadena
+							Escribir "Ingrese la cantidad de colas compradas "
+							leer colas
+							CantidadDeColas(Colas)
+							Esperar 3 Segundos
+						"2":
+							Borrar Pantalla
+							Escribir "2)La asociación de Vinicultores Inicio Kilo";
+							Definir Uvas Como Cadena
+							Escribir "Ingrese el Kilo de uvas "
+							leer Uvas
+							KilosDeUvas(Uvas)
+							Esperar 3 Segundos
+						"3":
+							Borrar Pantalla
+							Escribir "3)Dado dos números obtener el residuo sin el operador mod, %";
+							Definir DosNume Como Cadena
+							Escribir "	Ingrese Un Numero "
+							leer DosNume
+							DadoDosNumeros(DosNume)
+							Esperar 3 Segundos
+						"4":
+							Borrar Pantalla
+							Escribir "4)El consultorio del Dr. Paez"
+							Definir Consultorio Como Cadena
+							Escribir "Ingrese el numero de citas"
+							leer Consultorio
+							ElDrPaez(Consultorio)
+							Esperar 3 Segundos
+						"5":
+							Borrar Pantalla
+							Escribir "5)Escribir un algoritmo que lea cuatro números de mitad"
+							Definir Algorit Como Cadena
+							Escribir "Ingrese un Numero "
+							leer Algorit
+							LeerCuatroNumeros(Algorit)
+							Esperar 3 Segundos
+						"6":
+							Borrar Pantalla
+							Escribir "6)El Banco XYZ"
+							Definir Credito Como Cadena
+							Escribir "Ingrese el Tipo de Tarjeta"
+							leer Credito
+							BancoXYZ(Credito)
+							Esperar 3 Segundos
+						"7":
+							Borrar Pantalla
+							Escribir "7)Escribir un algoritmo que lea cuatro números divisor"
+							Definir LecturaDeNume Como Cadena
+							Escribir "Ingrese Un numero "
+							leer LecturaDeNume
+							LecturaDeNumeros(LecturaDeNume)
+							Esperar 3 Segundos
+						"8":
+							Borrar Pantalla
+							Escribir "8)El Banco POO"
+							Definir AumentoDeCredito Como Cadena
+							Escribir "Ingrese el numero de tarjeta "
+							leer AumentoDeCredito
+							BancoPOO(AumentoDeCredito)
+							Esperar 3 Segundos
+						"9":
+							Borrar Pantalla
+							Escribir "9)Pedir al usuario un número"
+							Definir NumeroPositivo Como Cadena
+							Escribir "Ingrese Un Numero"
+							leer NumeroPositivo
+							PositivosOnegativos(NumeroPositivo)
+							Esperar 3 Segundos
+						"10":
+							Borrar Pantalla
+							Escribir "10)La asociación de Vinicultores Inicial Quintal"
+							Definir Pitajaya Como Cadena
+							Escribir "Ingrese el tipo de Pitajaya"
+							leer Pitajaya
+							AsociacionDeVinicultores(Pitajaya)
+							Esperar 3 Segundos
+						"11":
+							Borrar Pantalla
+							Escribir "11) Pedir al usuario un número y mostrar si es par menor que 10"
+							Definir NumeroNegativo Como Cadena
+							Escribir "Ingrese un numero"
+							leer NumeroNegativo
+							MostrarQueNumeroSeaMenor(NumeroNegativo)
+							Esperar 3 Segundos
+						"12":
+							Borrar Pantalla
+							Escribir "12)Fábricas El Cometa"
+							Definir ElCometa Como Cadena
+							Escribir "Ingrese el codigo del articulo"
+							leer ElCometa
+							FabricasElCometa(ElCometa)
+							Esperar 3 Segundos
+						"13":
+							Borrar Pantalla
+							Escribir "13)Dado un número entero N, calcular e informar al usuario cuántos dígitos tiene dicho número"
+							Definir Digitos Como Cadena
+							Escribir "Ingrese un numero entero"
+							leer Digitos
+							CalcularDigitos(Digitos)
+							Esperar 3 Segundos
+						"14":
+							Borrar Pantalla
+							Escribir "14)Dado un número, determine si es capicúa"
+							Definir Capicua Como Cadena
+							Escribir "Ingrese un numero"
+							leer Capicua
+							DeterminarNumero(Capicua)
+							Esperar 3 Segundos
+						"15":
+							Borrar Pantalla
+							Escribir "15)Escribir un algoritmo que presente los divisores de un numero"
+							Definir Divisores Como Cadena
+							Escribir "Ingrese un numero"
+							leer Divisores
+							NumerosDivisores(Divisores)
+							Esperar 3 Segundos
+						"16":
+							Borrar Pantalla
+							Escribir "16)Escribir un algoritmo que presente la suma de los divisores de un numero"
+							Definir SumaDivisores Como Cadena
+							Escribir "Ingrese un numero"
+							leer SumaDivisores
+							SumaDeDivisores(SumaDivisores)
+							Esperar 3 Segundos
+						"17":
+							Borrar Pantalla
+							Escribir "17)Escribir un algoritmo que presente la cantidad de los divisores de un numero"
+							Definir CantidadNumeros Como Cadena
+							Escribir "Ingrese un numero"
+							leer CantidadNumeros
+							PresentarCantidad(CantidadNumeros)
+							Esperar 3 Segundos
+						"18":
+							Borrar Pantalla
+							Escribir "18)Escribir un algoritmo que indique si un número es perfecto"
+							Definir numeroper Como Cadena
+							Escribir "Ingrese un numero"
+							leer numeroper
+							NumeroPerfecto(numeroper)
+							Esperar 3 Segundos
+						"19":
+							Borrar Pantalla
+							Escribir "19)Dado un número N determinar si es un número primo"
+							Definir NumerosPrimos Como Cadena
+							Escribir "Ingrese un numero"
+							leer NumerosPrimos 
+							NumeroPrimos(NumerosPrimos)
+							Esperar 3 Segundos
+						"20":
+							Borrar Pantalla
+							Escribir "20)Dado dos números determinar si son primos gemelo"
+							Definir Gemelos Como Cadena
+							Escribir "Ingrese un numero"
+							leer Gemelos
+							NumerosGemelos(Gemelos)
+							Esperar 3 Segundos
+						"21":
+							Borrar Pantalla
+							Escribir "21)Dado dos números determinar si son primos amigos"
+							Definir Primo Como Cadena
+							Escribir "Ingrese un numero"
+							leer Primo
+							PrimosAmigos(Primo)
+							Esperar 3 Segundos
+						"22":
+							Escribir "Regresando al Menu Principal"
+							Esperar 1 Segundos
+						De Otro Modo:
+							Escribir "Opcion invalidad..."
+							Esperar 2 Segundos
+					Fin Segun
+				FinMientras
+			"2":
+				opcc =""
+				Mientras opcc <> "24" Hacer
+					opcc=presentarMenu("************MENU CADENAS Y ARREGLOS**********",menuCadenas,24)
+					Segun opcc Hacer
+						"1":
+							Borrar Pantalla
+							Escribir "1)Dada n realizar un algoritmo que presente la siguiente secuencia"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							PresentacionDeSecuencia(Secuencia)
+							Esperar 3 Segundos
+						"2":
+							Borrar Pantalla
+							Escribir "2)Implementa un programa que calcule el promedio de los elementos pares e impares"
+							Definir ParesImpares  Como Cadena
+							Escribir "Ingrese la cantidad de elementos "
+							leer ParesImpares
+							PromedioDeElementos(ParesImpares)
+							Esperar 3 Segundos
+						"3":
+							Borrar Pantalla
+							Escribir "3)Dada n realizar un algoritmo que presente la siguiente secuencia"
+							Definir Secuencias  Como Cadena
+							Escribir "Ingrese la cantidad de elementos "
+							leer Secuencias
+							PresentarSecuencias(Secuencias)
+							Esperar 3 Segundos
+						"4":
+							Borrar Pantalla
+							Escribir "4)Implementa un programa que copie los números de un arreglo a 2 arreglos en uno los números positivos"
+							Definir ProgramaCopia Como Cadena
+							Escribir "Ingrese el elemento"
+							leer ProgramaCopia
+							CopieDeNumeros(ProgramaCopia)
+							Esperar 3 Segundos
+						"5":
+							Borrar Pantalla
+							Escribir "5)Leer una secuencia de números hasta que se ingrese un numero negativo"
+							Definir  MostrarSumaPares Como Cadena
+							Escribir "Ingrese Frase: "
+							leer MostrarSumaPares
+							SecuenciaNumeros(MostrarSumaPares)
+							Esperar 3 Segundos
+						"6":
+							Borrar Pantalla
+							Escribir "6)Leer una secuencia de números hasta que se ingrese un 0 y almacenarlos en un arreglo"
+							Definir AlmacenarArreglo Como Cadena
+							Escribir "Ingrese un numero para su arreglo"
+							leer AlmacenarArreglo
+							AlmacenarlosEnArreglos(AlmacenarArreglo)
+							Esperar 3 Segundos
+						"7":
+							Borrar Pantalla
+							Escribir "7)Leer una secuencia de números hasta que se ingrese un numero par"
+							Definir MultiplosCinco Como Cadena
+							Escribir "Ingrese una secuencia de Numeros"
+							leer MultiplosCinco
+							MultiplosDeCinco(MultiplosCinco)
+							Esperar 3 Segundos
+						"8":
+							Borrar Pantalla
+							Escribir "8)Leer una secuencia de números hasta que se ingrese un numero negativo y almacenarlos en un arreglo"
+							Definir NumerosNegativos Como Cadena
+							Escribir "Ingrese una secuencia de numeros"
+							leer NumerosNegativos
+							AlmacenarNumerosNegativos(NumerosNegativos)
+							Esperar 3 Segundos
+						"9":
+							Borrar Pantalla
+							Escribir "9)Dado una frase indicar cuantas palabras tiene"
+							Definir frase Como Cadena
+							Escribir "Ingrese Frase: "
+							leer frase
+							fraseContar(frase)
+							Esperar 3 Segundos
+						"10":
+							Borrar Pantalla
+							Escribir "10)Leer una secuencia de números hasta que se ingrese un numero negativo y almacenarlos en arreglo"
+							Definir RecorrerA Como Cadena
+							Escribir "Ingrese NUMEROS, hasta que uno de ellos sea par "
+							leer RecorrerA
+							RecorrerArreglo(RecorrerA)
+							Esperar 4 Segundos
+						"11":
+							Borrar Pantalla
+							Escribir "11)Leer una secuencia de caracteres hasta que se ingrese un punto"
+							Definir Xingresadas Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Xingresadas
+							MostrarLoIngresado(Xingresadas)
+							Esperar 3 Segundos
+						"12":
+							Borrar Pantalla
+							Escribir "12)Leer una secuencia de números hasta que se ingrese un 0 y almacenarlos en arreglo"
+							Definir AlmacenarA Como Cadena
+							Escribir "Ingrese una secuencia de numeros "
+							leer AlmacenarA
+							AlmacenarArreglos(AlmacenarA)
+							Esperar 3 Segundos
+						"13":
+							Borrar Pantalla
+							Escribir "13)Dado dos números presentar los valores mayores a 5 entre ellos"
+							Definir ValoresMayores Como Cadena
+							Escribir "Ingrese valores numericos "
+							leer ValoresMayores
+							PresentarMayores(ValoresMayores)
+							Esperar 3 Segundos
+						"14":
+							Borrar Pantalla
+							Escribir "14)Elaborar un algoritmo que lea una serie de edades de los alumnos de la facultad FACI"
+							Definir Edades Como Cadena
+							Escribir "Ingrese las edades de los alumnos "
+							leer Edades
+							EdadesFacultad(Edades)
+							Esperar 3 Segundos
+						"15":
+							Borrar Pantalla
+							Escribir "15)Dado dos números presentar los valores Impares comprendidos entre ellos"
+							Definir ValorImpar Como Cadena
+							Escribir "Ingrese dos numeros: "
+							leer ValorImpar
+							ValoresImpares(ValorImpar)
+							Esperar 3 Segundos
+						"16":
+							Borrar Pantalla
+							Escribir "16)Elaborar un algoritmo que lea una serie de sueldos de los empleados de la UNEMI"
+							Definir Sueldos Como Cadena
+							Escribir "Ingrese los empleos disponibles: "
+							leer Sueldos
+							serieDeSueldos(Sueldos)
+							Esperar 3 Segundos
+						"17":
+							Borrar Pantalla
+							Escribir "17)Dadas dos frase indicar la de mayor longitud"
+							Definir Frase Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Frase
+							MayorFrase(Frase)
+							Esperar 3 Segundos
+						"18":
+							Borrar Pantalla
+							Escribir "18)Indicar cuantas ,.;: hay en una cadena"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"19":
+							Borrar Pantalla
+							Escribir "19)Dado una cadena indicar cuantas vocales, consonantes y dígitos hay"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"20":
+							Borrar Pantalla
+							Escribir "20)Indicar cuantas palabras hay en una frase asumiendo 1 o varios espacios entre palabras"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"21":
+							Borrar Pantalla
+							Escribir "21)Presentar la suma de los dígitos de una cedula"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"22":
+							Borrar Pantalla
+							Escribir "22)Indicar si una palabra es palíndroma"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"23":
+							Borrar Pantalla
+							Escribir "10)Presentar la posicion de un caracter o subcadena cualquiera dentro de una cadena"
+							Definir Secuencia Como Cadena
+							Escribir "Ingrese Frase: "
+							leer Secuencia
+							Esperar 3 Segundos
+						"24":
+							Escribir "Regresando al Menu Principal"
+							Esperar 1 Segundos
+						De Otro Modo:
+							Escribir "Opcion invalidad"
+							Esperar 2 Segundos
+					FinSegun
+				FinMientras
+			"3":
+				Escribir "**************************"
+				Escribir "Gracias por usar el Sistema :D "
+				Esperar 1 Segundos
+			De Otro Modo:
+				Escribir "Opcion Invalidad"
+				Esperar 1 Segundos
+		Fin Segun
+    Fin Mientras
+FinAlgoritmo
